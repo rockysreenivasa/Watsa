@@ -40,15 +40,15 @@ var AppRouter = Backbone.Router.extend({
         var p = page ? parseInt(page, 10) : 1;
         var eventList = new EventCollection();
         eventList.fetch({success: function(){
-            $("#content").html(new eventListView({model: wineList, page: p}).el);
+            $("#content").html(new eventListView({model: eventList, page: p}).el);
         }});
         this.headerView.selectMenuItem('home-menu');
     },
 
     wineDetails: function (id) {
         var event = new Event({_id: id});
-        wine.fetch({success: function(){
-            $("#content").html(new EventView({model: wine}).el);
+        events.fetch({success: function(){
+            $("#content").html(new EventView({model: events}).el);
         }});
         this.headerView.selectMenuItem();
     },

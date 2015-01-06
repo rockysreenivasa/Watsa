@@ -28,24 +28,24 @@ var AppRouter = Backbone.Router.extend({
 
 	list: function(page) {
         var p = page ? parseInt(page, 10) : 1;
-        var eventList = new EventCollection();
+        var eventList = new eventCollection();
         eventList.fetch({success: function(){
-            $("#content").html(new eventListView({model: wineList, page: p}).el);
+            $("#content").html(new eventListView({model: eventList, page: p}).el);
         }});
         this.headerView.selectMenuItem('home-menu');
     },
 
-    wineDetails: function (id) {
-        var event = new Event({_id: id});
-        wine.fetch({success: function(){
-            $("#content").html(new EventView({model: wine}).el);
+    eventDetails: function (id) {
+        var event = new event({_id: id});
+        event.fetch({success: function(){
+            $("#content").html(new eventView({model: event}).el);
         }});
         this.headerView.selectMenuItem();
     },
 
-	addWine: function() {
-        var event = new Event();
-        $('#content').html(new EventView({model: wine}).el);
+	addEvent: function() {
+        var event = new event();
+        $('#content').html(new eventView({model: event}).el);
         this.headerView.selectMenuItem('add-menu');
 	},
 

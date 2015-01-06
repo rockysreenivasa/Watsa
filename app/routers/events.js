@@ -12,7 +12,7 @@ new mariasql.Database({
 
 exports.findById = function(req, res) {
     var id = req.params.id;
-    console.log('Retrieving wine: ' + id);
+    console.log('Retrieving event: ' + id);
     db.collection('events', function(err, collection) {
         collection.findOne({'_id':new BSON.ObjectID(id)}, function(err, item) {
             res.send(item);
@@ -29,10 +29,10 @@ exports.findAll = function(req, res) {
 };
 
 exports.addEvent = function(req, res) {
-    var wine = req.body;
+    var event = req.body;
     console.log('Adding event: ' + JSON.stringify(wine));
     db.collection('events', function(err, collection) {
-        collection.insert(wine, {safe:true}, function(err, result) {
+        collection.insert(event, {safe:true}, function(err, result) {
             if (err) {
                 res.send({'error':'An error has occurred'});
             } else {
@@ -45,8 +45,8 @@ exports.addEvent = function(req, res) {
 
 exports.updateEvent = function(req, res) {
     var id = req.params.id;
-    var wine = req.body;
-    delete wine._id;
+    var event = req.body;
+    delete event._id;
     console.log('Updating event: ' + id);
     console.log(JSON.stringify(wine));
     db.collection('events', function(err, collection) {
