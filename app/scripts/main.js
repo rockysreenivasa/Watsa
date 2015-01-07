@@ -12,6 +12,7 @@ var App = require('./app.js');
 var app = new App();
 
 app.beep();
+var Backbone = require('backbone');
 var AppRouter = Backbone.Router.extend({
 
     routes: {
@@ -45,7 +46,7 @@ var AppRouter = Backbone.Router.extend({
         this.headerView.selectMenuItem('home-menu');
     },
 
-    wineDetails: function (id) {
+    eventDetails: function (id) {
         var event = new Event({_id: id});
         events.fetch({success: function(){
             $("#content").html(new EventView({model: events}).el);
@@ -53,9 +54,9 @@ var AppRouter = Backbone.Router.extend({
         this.headerView.selectMenuItem();
     },
 
-	addWine: function() {
+	addEvent: function() {
         var event = new Event();
-        $('#content').html(new EventView({model: wine}).el);
+        $('#content').html(new EventView({model: event}).el);
         this.headerView.selectMenuItem('add-menu');
 	},
 

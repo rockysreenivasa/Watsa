@@ -1,6 +1,4 @@
-var $ = require('jquery-untouched');
-var Backbone = require('backbone');
-Backbone.$ = $;
+var $ = require('jquery-untouched'); var _ = require('underscore'); var Backbone = require('backbone'); Backbone.$ = $;
 
 var AppRouter = Backbone.Router.extend({
 

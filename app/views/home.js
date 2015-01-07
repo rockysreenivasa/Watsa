@@ -1,3 +1,4 @@
+//var Backbone = require('backbone');
 window.HomeView = Backbone.View.extend({
 
     initialize:function () {
@@ -5,7 +6,7 @@ window.HomeView = Backbone.View.extend({
     },
 
     render:function () {
-        $(this.el).html(this.template());
+        $(this.el).html(this.templates());
         return this;
     }
 

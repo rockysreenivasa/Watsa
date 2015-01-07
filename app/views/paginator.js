@@ -1,3 +1,4 @@
+//var Backbone = require('backbone');
 window.Paginator = Backbone.View.extend({
 
     className: "pagination pagination-centered",

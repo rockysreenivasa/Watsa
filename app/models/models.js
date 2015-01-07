@@ -1,3 +1,4 @@
+var Backbone = require('backbone');
 window.Event= Backbone.Model.extend({
 
     urlRoot: "/events",

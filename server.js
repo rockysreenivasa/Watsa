@@ -18,6 +18,13 @@ app.use(can);
 
 
 var port = 5000;
+app.get('/events', events.findAll);
+app.get('/events/:id', events.findById);
+app.post('/events', events.addEvent);
+app.put('/events/:id', events.updateEvent);
+app.delete('/events/:id', events.deleteEvent);
+
+ 
 http.createServer(app).listen(port, function() {
   console.log('Frontend listening at %s', port);
 });

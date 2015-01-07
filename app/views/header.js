@@ -1,3 +1,4 @@
+//var Backbone = require('backbone');
 window.HeaderView = Backbone.View.extend({
 
     initialize: function () {
@@ -5,7 +6,7 @@ window.HeaderView = Backbone.View.extend({
     },
 
     render: function () {
-        $(this.el).html(this.template());
+        $(this.el).html(this.templates());
         console.log(HeaderView.el);
         return this;
     },
